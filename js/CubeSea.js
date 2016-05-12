@@ -2,10 +2,10 @@
 CubeSea
 */
 
-function CubeSea(gridSize, cubeSize) {
-	var map = new THREE.TextureLoader().load( 'textures/cube-sea.png' );
-
+function CubeSea( gridSize, cubeSize ) {
 	var sea = new THREE.Object3D();
+
+	new THREE.TextureLoader().load( 'textures/cube-sea.png', function( map ){
 
 	var geo = new THREE.BoxGeometry( cubeSize, cubeSize, cubeSize );
 	var mat = new THREE.MeshBasicMaterial({
@@ -25,6 +25,8 @@ function CubeSea(gridSize, cubeSize) {
 			}
 		}
 	}
+
+	});
 
 	return sea;
 }
