@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webvr - cubes</title>
+		<title>WebVR Sample &middot; three.js</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<style>
@@ -104,8 +104,14 @@
 
 			function setupScene() {
 
-				var cubeSea = CubeSea( 10, 0.4 );
+				var cubeSea = CubeSea( 10, 0.4, true );
 				scene.add( cubeSea );
+
+				scene.add( new THREE.HemisphereLight( 0x999999, 0x333333, 0.9 ) );
+
+				var light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 1, 0.7, 0.9 ).normalize();
+				scene.add( light );
 
 			}
 
