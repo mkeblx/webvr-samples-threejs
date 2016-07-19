@@ -128,14 +128,21 @@
 
 			function animate() {
 
-				requestAnimationFrame( animate );
+				effect.requestAnimationFrame( animate );
+
+				update();
 				render();
+
+			}
+
+			function update() {
+
+				controls.update();
 
 			}
 
 			function render() {
 
-				controls.update();
 				effect.render( scene, camera );
 
 			}
