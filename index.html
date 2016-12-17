@@ -126,22 +126,22 @@
 
 			//
 
-			function animate() {
+			function animate( t ) {
 
 				effect.requestAnimationFrame( animate );
 
-				update();
-				render();
+				update( t );
+				render( t );
 
 			}
 
-			function update() {
+			function update( t ) {
 
 				controls.update();
 
 			}
 
-			function render() {
+			function render( t ) {
 
 				effect.render( scene, camera );
 
